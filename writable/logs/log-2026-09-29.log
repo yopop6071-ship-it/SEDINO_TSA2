@@ -1,0 +1,209 @@
+ERROR - 2026-09-29 09:16:33 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'ci4' in C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#1 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\Acer\Desktop\ci4_Sedino\TA1\app\Controllers\Home.php(16): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\CodeIgniter.php(974): App\Controllers\Home->index()
+#8 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Acer\Desktop\ci4_Sedino\TA1\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\Users\\Acer\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'ci4' in C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\Acer\Desktop\ci4_Sedino\TA1\app\Controllers\Home.php(16): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\CodeIgniter.php(974): App\Controllers\Home->index()
+#7 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\Acer\Desktop\ci4_Sedino\TA1\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\Users\\Acer\\D...')
+#13 {main}
+CRITICAL - 2026-09-29 09:16:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'ci4'
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tasks`
+WHERE `task_date` = :task_date:
+ORDER BY `id` ASC', [...], false)
+ 3 SYSTEMPATH\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(16): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Acer\\Desktop\\ci4_Sedino\\TA1\\public\\index.php')
+ERROR - 2026-09-29 09:16:49 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'ci4' in C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#1 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\Acer\Desktop\ci4_Sedino\TA1\app\Controllers\Tasks.php(15): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\CodeIgniter.php(974): App\Controllers\Tasks->index()
+#8 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tasks))
+#9 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Acer\Desktop\ci4_Sedino\TA1\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\Users\\Acer\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'ci4' in C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\Acer\Desktop\ci4_Sedino\TA1\app\Controllers\Tasks.php(15): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\CodeIgniter.php(974): App\Controllers\Tasks->index()
+#7 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tasks))
+#8 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\Acer\Desktop\ci4_Sedino\TA1\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\Users\\Acer\\D...')
+#13 {main}
+CRITICAL - 2026-09-29 09:16:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'ci4'
+[Method: GET, Route: tasks]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tasks`
+ORDER BY `task_date` ASC', [], false)
+ 3 SYSTEMPATH\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Tasks.php(15): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Tasks->index()
+ 7 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tasks))
+ 8 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Acer\\Desktop\\ci4_Sedino\\TA1\\public\\index.php')
+ERROR - 2026-09-29 09:18:56 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'ci4' in C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#1 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\Acer\Desktop\ci4_Sedino\TA1\app\Controllers\Tasks.php(15): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\CodeIgniter.php(974): App\Controllers\Tasks->index()
+#8 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tasks))
+#9 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Acer\Desktop\ci4_Sedino\TA1\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\Users\\Acer\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'ci4' in C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\Acer\Desktop\ci4_Sedino\TA1\app\Controllers\Tasks.php(15): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\CodeIgniter.php(974): App\Controllers\Tasks->index()
+#7 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tasks))
+#8 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\Acer\Desktop\ci4_Sedino\TA1\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\Users\\Acer\\D...')
+#13 {main}
+CRITICAL - 2026-09-29 09:18:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'ci4'
+[Method: GET, Route: tasks]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tasks`
+ORDER BY `task_date` ASC', [], false)
+ 3 SYSTEMPATH\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Tasks.php(15): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Tasks->index()
+ 7 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tasks))
+ 8 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Acer\\Desktop\\ci4_Sedino\\TA1\\public\\index.php')
+ERROR - 2026-09-29 09:19:32 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'ci4' in C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#1 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\Acer\Desktop\ci4_Sedino\TA1\app\Controllers\Tasks.php(15): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\CodeIgniter.php(974): App\Controllers\Tasks->index()
+#8 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tasks))
+#9 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Acer\Desktop\ci4_Sedino\TA1\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\Users\\Acer\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'ci4' in C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\Acer\Desktop\ci4_Sedino\TA1\app\Controllers\Tasks.php(15): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\CodeIgniter.php(974): App\Controllers\Tasks->index()
+#7 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tasks))
+#8 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\Acer\Desktop\ci4_Sedino\TA1\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\Acer\Desktop\ci4_Sedino\TA1\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\Users\\Acer\\D...')
+#13 {main}
+CRITICAL - 2026-09-29 09:19:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'ci4'
+[Method: GET, Route: tasks]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tasks`
+ORDER BY `task_date` ASC', [], false)
+ 3 SYSTEMPATH\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Tasks.php(15): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Tasks->index()
+ 7 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tasks))
+ 8 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Acer\\Desktop\\ci4_Sedino\\TA1\\public\\index.php')
